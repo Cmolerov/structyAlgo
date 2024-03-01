@@ -7,20 +7,30 @@
 ​
 const getNodeValue = (head, index) => {
   // todo
-  if(index === 0) return head.val
+ if(!head) return null; 
   
-  let cur = head.next;
-  let count = 1;
-  while(cur){
-    if(count === index) return cur.val;
-    cur = cur.next;
-    count += 1; 
-  }
-  
-  return null
+if(index === 0) return head.val
+  index--
+  return getNodeValue(head.next, index)
 };
+​
+// const getNodeValue = (head, index) => {
+//   // todo
+//   if(index === 0) return head.val
+  
+//   let cur = head.next;
+//   let count = 1;
+//   while(cur){
+//     if(count === index) return cur.val;
+//     cur = cur.next;
+//     count += 1; 
+//   }
+  
+//   return null
+// };
 ​
 module.exports = {
   getNodeValue,
 };
 ​
+  
